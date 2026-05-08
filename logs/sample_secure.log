@@ -1,0 +1,36 @@
+# Normal user authentication patterns
+Mar 10 08:00:15 server sshd[30001]: Accepted password for alice from 192.168.1.50 port 52341 ssh2
+Mar 10 08:00:18 server sshd[30002]: Accepted password for bob from 192.168.1.51 port 52342 ssh2
+Mar 10 08:00:20 server sshd[30003]: Accepted password for carol from 192.168.1.52 port 52343 ssh2
+
+# Legitimate failed attempts (forgotten passwords - low frequency)
+Mar 10 08:30:22 server sshd[30100]: Failed password for alice from 192.168.1.50 port 52344 ssh2
+Mar 10 08:30:25 server sshd[30101]: Accepted password for alice from 192.168.1.50 port 52345 ssh2
+
+Mar 10 09:15:33 server sshd[30200]: Failed password for bob from 192.168.1.51 port 52346 ssh2
+Mar 10 09:15:36 server sshd[30201]: Accepted password for bob from 192.168.1.51 port 52347 ssh2
+
+# System maintenance and cron jobs (not authentication failures)
+Mar 10 01:00:01 server CRON[28001]: (root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))
+Mar 10 01:00:02 server CRON[28002]: (root) CMD (test -x /usr/lib/php/sessionclean && /usr/lib/php/sessionclean)
+Mar 10 02:00:01 server CRON[28100]: (root) CMD ( /usr/bin/logrotate /etc/logrotate.conf)
+
+# Successful admin access
+Mar 10 10:00:00 server sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/apt update
+Mar 10 10:05:12 server sudo: bob : TTY=pts/1 ; PWD=/home/bob ; USER=root ; COMMAND=/bin/systemctl restart nginx
+
+# SSH key authentication (no password needed)
+Mar 10 11:20:44 server sshd[30500]: Accepted publickey for devops from 10.0.0.15 port 56789 ssh2
+Mar 10 11:21:00 server sshd[30501]: Accepted publickey for devops from 10.0.0.16 port 56790 ssh2
+
+# Failed but legitimate (typo in username - happens rarely)
+Mar 10 14:30:15 server sshd[31000]: Failed password for alicee from 192.168.1.50 port 52348 ssh2
+Mar 10 14:30:18 server sshd[31001]: Accepted password for alice from 192.168.1.50 port 52349 ssh2
+
+# VPN connection logs (not SSH)
+Mar 10 09:00:00 server openvpn[29000]: 203.0.113.45:54321 [alice] Peer Connection Initiated
+Mar 10 09:00:05 server openvpn[29001]: alice/203.0.113.45:54321 MULTI_sva: pool returned IPv4=10.8.0.6
+
+# End of day - normal logouts
+Mar 10 17:30:00 server sshd[32000]: Received disconnect from 192.168.1.50 port 52349:11: disconnected by user
+Mar 10 17:31:00 server sshd[32001]: Received disconnect from 192.168.1.51 port 52347:11: disconnected by user

@@ -1,0 +1,46 @@
+# SSH Brute Force Attack - Password Spraying (Multiple accounts)
+Mar 10 02:15:23 server sshd[24567]: Failed password for root from 45.33.22.11 port 34521 ssh2
+Mar 10 02:15:25 server sshd[24568]: Failed password for admin from 45.33.22.11 port 34522 ssh2
+Mar 10 02:15:27 server sshd[24569]: Failed password for oracle from 45.33.22.11 port 34523 ssh2
+Mar 10 02:15:29 server sshd[24570]: Failed password for postgres from 45.33.22.11 port 34524 ssh2
+Mar 10 02:15:31 server sshd[24571]: Failed password for tomcat from 45.33.22.11 port 34525 ssh2
+Mar 10 02:15:33 server sshd[24572]: Failed password for ubuntu from 45.33.22.11 port 34526 ssh2
+Mar 10 02:15:35 server sshd[24573]: Failed password for deploy from 45.33.22.11 port 34527 ssh2
+Mar 10 02:15:37 server sshd[24574]: Failed password for vagrant from 45.33.22.11 port 34528 ssh2
+Mar 10 02:15:39 server sshd[24575]: Failed password for pi from 45.33.22.11 port 34529 ssh2
+
+# Distributed Brute Force Attack (Multiple IPs attacking same account)
+Mar 10 02:20:15 server sshd[24601]: Failed password for root from 185.130.5.253 port 45678 ssh2
+Mar 10 02:20:18 server sshd[24602]: Failed password for root from 185.130.5.254 port 45679 ssh2
+Mar 10 02:20:21 server sshd[24603]: Failed password for root from 185.130.5.255 port 45680 ssh2
+Mar 10 02:20:24 server sshd[24604]: Failed password for root from 185.130.5.251 port 45681 ssh2
+Mar 10 02:20:27 server sshd[24605]: Failed password for root from 185.130.5.252 port 45682 ssh2
+
+# Slow Brute Force (Low and Slow attack - evades simple detection)
+Mar 10 03:30:10 server sshd[24789]: Failed password for john from 103.112.45.67 port 12345 ssh2
+Mar 10 03:35:22 server sshd[24795]: Failed password for john from 103.112.45.67 port 12346 ssh2
+Mar 10 03:40:33 server sshd[24801]: Failed password for john from 103.112.45.67 port 12347 ssh2
+Mar 10 03:45:44 server sshd[24807]: Failed password for john from 103.112.45.67 port 12348 ssh2
+Mar 10 03:50:55 server sshd[24813]: Failed password for john from 103.112.45.67 port 12349 ssh2
+Mar 10 03:56:06 server sshd[24819]: Failed password for john from 103.112.45.67 port 12350 ssh2
+
+# User Enumeration Attack
+Mar 10 04:00:10 server sshd[24850]: Invalid user sales from 198.51.100.77 port 55555
+Mar 10 04:00:12 server sshd[24851]: Invalid user marketing from 198.51.100.77 port 55556
+Mar 10 04:00:14 server sshd[24852]: Invalid user hr from 198.51.100.77 port 55557
+Mar 10 04:00:16 server sshd[24853]: Invalid user finance from 198.51.100.77 port 55558
+Mar 10 04:00:18 server sshd[24854]: Invalid user it from 198.51.100.77 port 55559
+Mar 10 04:00:20 server sshd[24855]: Invalid user devops from 198.51.100.77 port 55560
+Mar 10 04:00:22 server sshd[24856]: Invalid user security from 198.51.100.77 port 55561
+
+# Successful breach attempt (one success after many failures)
+Mar 10 05:45:33 server sshd[25234]: Failed password for backdoor from 189.23.45.12 port 33445 ssh2
+Mar 10 05:45:35 server sshd[25235]: Failed password for backdoor from 189.23.45.12 port 33446 ssh2
+Mar 10 05:45:37 server sshd[25236]: Failed password for backdoor from 189.23.45.12 port 33447 ssh2
+Mar 10 05:45:39 server sshd[25237]: Accepted password for backdoor from 189.23.45.12 port 33448 ssh2
+Mar 10 05:45:40 server sudo: backdoor : user NOT in sudoers ; TTY=pts/1 ; PWD=/home/backdoor ; USER=root ; COMMAND=/bin/bash
+
+# Lateral Movement (inside network after breach)
+Mar 10 05:50:22 server sshd[25300]: Failed password for root from 192.168.1.105 port 49321 ssh2
+Mar 10 05:50:25 server sshd[25301]: Failed password for root from 192.168.1.106 port 49322 ssh2
+Mar 10 05:50:28 server sshd[25302]: Failed password for root from 192.168.1.107 port 49323 ssh2

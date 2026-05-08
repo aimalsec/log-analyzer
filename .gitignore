@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# Reports (keep structure but not the actual reports)
+reports/*.json
+reports/*.csv
+reports/*.txt
+!reports/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,12 @@
+Jan 15 08:23:15 server sshd[1234]: Failed password for root from 192.168.1.100 port 12345 ssh2
+Jan 15 08:23:18 server sshd[1235]: Failed password for invalid user admin from 192.168.1.100 port 12346 ssh2
+Jan 15 08:23:20 server sshd[1236]: Failed password for root from 192.168.1.100 port 12347 ssh2
+Jan 15 08:23:22 server sshd[1237]: Invalid user test from 192.168.1.100 port 12348
+Jan 15 08:23:25 server sshd[1238]: Failed password for root from 10.0.0.50 port 54321 ssh2
+Jan 15 08:23:27 server sshd[1239]: Failed password for invalid user oracle from 10.0.0.50 port 54322 ssh2
+Jan 15 08:23:30 server sshd[1240]: Invalid user backup from 10.0.0.50 port 54323
+Jan 15 08:24:10 server sshd[1300]: Failed password for root from 192.168.1.100 port 12349 ssh2
+Jan 15 08:24:12 server sshd[1301]: Failed password for root from 192.168.1.100 port 12350 ssh2
+Jan 15 08:24:15 server sshd[1302]: Failed password for root from 192.168.1.100 port 12351 ssh2
+Jan 15 08:24:18 server sshd[1303]: Failed password for root from 192.168.1.100 port 12352 ssh2
+Jan 15 08:24:20 server sshd[1304]: Failed password for root from 192.168.1.100 port 12353 ssh2
